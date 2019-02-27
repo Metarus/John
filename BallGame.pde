@@ -1,5 +1,7 @@
 class BallGame {
   int tick;
+  float a=255;
+  float round=50;
   PlayerBall player;
   ArrayList<EnemyBall> enemies=new ArrayList<EnemyBall>();
   BallGame() {
@@ -27,20 +29,32 @@ class BallGame {
     }
     player.update();
     if(tick>600) {
+      a-=4;
       player.lowerSpeed();
       if(tick>630) {
-        ellipse(player.pos.x, player.pos.y, tick-605, tick-605);
+        if(tick>655&&round>0) {
+          round-=0.25;
+        }
+        rectMode(CENTER);
+        if(tick<855) {
+          rect(player.pos.x, player.pos.y, tick-605, tick-605, round, round, round, round);
+        } else rect(player.pos.x, player.pos.y, 250, 250, round, round, round, round);
+        if(tick>880) {
+          platformGame=new PlatformGame(player.pos.x-125, player.pos.y-125);
+          state=3;
+        }
       }
     }
   }
   void display() {
     background(255);
-    fill(0);
+    fill(0, a);
+    stroke(0, a);
     strokeWeight(5);
     line(mouseX, mouseY, width/2, 2*height/3);
     strokeWeight(1);
     ellipse(width/2, 2*height/3, 50, 50);
-    fill(0, 0, 255);
+    fill(0, 0, 255, a);
     ellipse(mouseX, mouseY, 25, 25);
   }
 }
