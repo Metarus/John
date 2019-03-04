@@ -16,6 +16,10 @@ class PlatformPlayer {
       pos.y=2250;
       vel.y=0;
     }
+    if(pos.x<0) {
+      pos.x=0;
+      vel.x=0;
+    }
   }
   void display() {
     rectMode(0);

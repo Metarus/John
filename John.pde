@@ -19,7 +19,6 @@ void setup() {
 }
 
 void draw() {
-  background(0);
   switch(state) {
     case 0:
       baseScreen();

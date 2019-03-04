@@ -21,6 +21,7 @@ boolean fall=false;
 Block blocks[][];
 
 void fallScreen() {
+  background(0);
   textSize(450);
   fill(255);
   text("Start", width/2, height/2+150);
