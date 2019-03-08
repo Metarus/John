@@ -13,7 +13,7 @@ class PlatformText {
     if(platformGame.player.pos.x>xBound) {
       display=true;
     }
-    if(display&&text.length()<fullText.length()&&platformGame.tick%5==0) {
+    if(display&&text.length()<fullText.length()&&platformGame.tick%3==0) {
       text=text+fullText.charAt(text.length());
     }
     display();

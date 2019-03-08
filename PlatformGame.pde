@@ -8,7 +8,7 @@ class PlatformGame {
     new PlatformText("I've known you for, what? \n 6 years now?", 4500, 1750, 4300),
     new PlatformText("You've taught me so many things \n from coding to rock climbing", 6000, 1750, 5800),
     new PlatformText("to Robotics to IB Comp sci \n And I think I speak for everyone when I say", 7500, 1750, 7300),
-    new PlatformText("You've taught us all so much \n and I'm thankful in every way to have had you as a teacher", 9000, 1750, 8800),
+    new PlatformText("You've taught us all so much \n and thank you for being a teacher,", 9000, 1750, 8800),
     new PlatformText("A mentor", 10500, 1750, 10300),
     new PlatformText("A friend.", 11500, 1750, 11300),
     new PlatformText("When I look back to 6 years ago \n I see a younger Rana", 13000, 1750, 12800),
@@ -21,6 +21,7 @@ class PlatformGame {
     player=new PlatformPlayer(px, py);
   }
   void update() {
+    music.play();
     tick++;
     player.update();
     cam.update();

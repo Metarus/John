@@ -33,6 +33,7 @@ class BallGame {
       player.lowerSpeed();
       if(tick>630) {
         if(tick>655&&round>0) {
+          music.pause();
           round-=0.25;
         }
         rectMode(CENTER);
@@ -40,6 +41,8 @@ class BallGame {
           rect(player.pos.x, player.pos.y, tick-605, tick-605, round, round, round, round);
         } else rect(player.pos.x, player.pos.y, 250, 250, round, round, round, round);
         if(tick>880) {
+          music=minim.loadFile("data/song2.mp3");
+          music.play();
           platformGame=new PlatformGame(player.pos.x-125, player.pos.y-125);
           state=3;
         }

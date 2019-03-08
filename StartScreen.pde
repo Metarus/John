@@ -36,5 +36,7 @@ void fallScreen() {
   if(fall&&mouseX>1400&&mouseX<2440&&mouseY>830&&mouseY<1260&&mousePressed) {
     state=2;
     ballGame=new BallGame();
+    music=minim.loadFile("data/song1.mp3");
+    music.play();
   }
 }
